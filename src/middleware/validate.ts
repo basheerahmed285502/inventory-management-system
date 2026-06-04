@@ -15,7 +15,9 @@ export const validate =
     if (!result.success) {
       return res.status(400).json({
         success: false,
-        errors: result.error.issues
+        errors: result.error.issues.map((issue) => ({
+          message: issue.message
+        }))
       });
     }
 

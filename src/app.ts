@@ -4,6 +4,7 @@ import "./db/database";
 import productRoutes from "./routes/product-routes";
 import saleRoutes
 from "./routes/sale-routes";
+import summaryRoutes from "./routes/summary-routes";
 
 const app = express();
 
@@ -20,5 +21,6 @@ app.use(
   "/sales",
   saleRoutes
 );
+app.use("/summary", summaryRoutes);
 
 export default app;
